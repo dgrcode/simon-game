@@ -1,0 +1,235 @@
+@import 'https://fonts.googleapis.com/css?family=Anton|Prompt|VT323'
+
+=center-v-h
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+body
+	height: 100vh
+	width: 100vw
+	margin: auto
+	color: #333
+
+.device
+	// position
+	position: absolute
+	+center-v-h
+	// appearance
+	height: 500px
+	width: 500px
+	border-radius: 100%
+	background-color: #333
+	padding: 20px
+
+	&.device-on
+		.display
+			color: #dc0d29
+		#label-on
+			text-shadow: 0 0 3px red
+			color: red
+
+.buttons
+	position: absolute
+	display: flex
+	flex-wrap: wrap
+
+.button
+	height: 250px
+	width: 250px
+	cursor: pointer
+
+	&:nth-child(1)
+		border-radius: 100% 0 0 0
+	&:nth-child(2)
+		border-radius: 0 100% 0 0
+	&:nth-child(3)
+		border-radius: 0 0 0 100%
+	&:nth-child(4)
+		border-radius: 0 0 100% 0
+
+
+	&#green
+		background-color: #00a74a
+		&.active
+			background-color: #00ff73
+	&#red
+		background-color: #9f0f17
+		&.active
+			background-color: #e91620
+	&#yellow
+		background-color: #cca707
+		&.active
+			background-color: #f8d53a
+	&#blue
+		background-color: #094a8f
+		&.active
+			background-color: #0f7cf0
+
+.inner-border
+	position: absolute
+
+.border
+	position: absolute
+	+center-v-h
+	height: 500px
+	width: 500px
+	background-color: #333
+
+	&-vertical
+		width: 20px
+	&-horizontal
+		height: 20px
+
+.controls
+	// position
+	position: absolute
+	+center-v-h
+	// appearance
+	height: 250px
+	width: 250px
+	background-color: white
+	border: 10px solid #333
+	border-radius: 100%
+	font-family: Prompt
+	box-sizing: border-box
+	padding: 15px
+	// child relations
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	align-items: center
+
+.brand
+	text-align: center
+
+	.title
+		display: block
+		font-family: Anton
+		font-size: 250%
+
+	.subtitle
+		position: relative
+		top: -10px
+		font-size: 70%
+
+		a
+			text-decoration: none
+			color: inherit
+
+			&:hover
+				font-weight: bold
+				color: rgba(100, 100, 250, 0.7)
+
+.controls-wrapper
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	align-items: center
+
+	.screen, .control-button
+		display: inline
+		text-align: center
+
+.label
+	font-size: 60%
+	padding-top: 5px
+
+.display
+	// appearance
+	height: 40px
+	width: 60px
+	background-color: #32050c
+	border: solid #222
+	border-radius: 8px
+	// font
+	color: #430710
+	font-size: larger
+	font-family: VT323
+	// child relations
+	display: flex
+	justify-content: center
+	align-items: center
+
+.btn
+	height: 30px
+	width: 30px
+	border: 5px solid #333
+	border-radius: 100%
+	transition: box-shadow 0.2s, transform 0.2s
+
+	&:active
+		box-shadow: inset 1px 2px 4px rgba(0,0,0,0.7)
+		transition: box-shadow 0s, transform 0s
+
+	&-start
+		background-color: #e00
+	&-strict
+		background-color: #ff0
+
+.light
+	height: 10px
+	width: 10px
+	background-color: #32050c
+	border: 1px solid #333
+	border-radius: 100%
+	box-sizing: border-box
+	margin-bottom: 15px
+	box-shadow: 0 0 0 transparent
+
+	&.strict-on
+		background-color: #dc0d29
+		box-shadow: 0 0 4px rgba(255,0,0,1)
+
+.switch-wrapper
+	height: 50px
+	width: 140px
+	display: flex
+	justify-content: center
+	align-items: center
+
+	& > *
+		display: inline-flex
+
+.switch-container
+	height: 20px
+	width: 60px
+	margin: auto 7px
+
+	#switch 
+		display: none
+
+	#switch + label
+		position: relative
+		display: block
+		cursor: pointer
+		width: 100%
+		height: 100%
+
+	#switch + label:before // this is the switch track
+		content: ""
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		background-color: rgba(0, 0, 0, 0.3)
+		border-radius: 3px
+		box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.7)
+
+	#switch + label:after // this is the switch moving part
+		content: ""
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		width: 30%
+		display: block
+		background-color: currentColor
+		border-radius: 4px
+		box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7)
+		transition: margin 0.2s cubic-bezier(0.64, 0.07, 1, 0.44)
+		margin-left: 70%
+	
+	#switch:checked + label:after
+		margin-left: 0

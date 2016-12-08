@@ -1,0 +1,40 @@
+html
+	head
+		title Simon Game
+
+		link(href='styles.css', rel='stylesheet')
+
+	body
+		.device
+			.buttons
+				.button#green
+				.button#red
+				.button#yellow
+				.button#blue
+			.inner-borders
+				.border.border-vertical
+				.border.border-horizontal
+			.controls
+				.brand
+					.title Simon
+					.subtitle by #[a(href="https://dgrcode.github.io/portfolio/" target="_blank") Daniel González Reina]
+				.controls-wrapper
+					.screen
+						.display --
+						.label COUNT
+					.control-button
+						.btn.btn-start#start
+						.label START
+					.control-button
+						.btn.btn-strict#strict
+						.label STRICT
+					.light
+				.switch-wrapper
+					.hlabel#label-on ON
+					.switch-container
+						input#switch(type="checkbox")
+						label(for="switch")
+					.hlabel OFF
+
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="  crossorigin="anonymous")
+		script(src="simon.js")

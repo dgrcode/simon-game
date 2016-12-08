@@ -1,0 +1,52 @@
+
+<html>
+  <head>
+    <title>Simon Game</title>
+    <link href="styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="device">
+      <div class="buttons">
+        <div class="button" id="green"></div>
+        <div class="button" id="red"></div>
+        <div class="button" id="yellow"></div>
+        <div class="button" id="blue"></div>
+      </div>
+      <div class="inner-borders">
+        <div class="border border-vertical"></div>
+        <div class="border border-horizontal"></div>
+      </div>
+      <div class="controls">
+        <div class="brand">
+          <div class="title">Simon</div>
+          <div class="subtitle">by <a href="https://dgrcode.github.io/portfolio/" target="_blank">Daniel González Reina</a></div>
+        </div>
+        <div class="controls-wrapper">
+          <div class="screen">
+            <div class="display">--</div>
+            <div class="label">COUNT</div>
+          </div>
+          <div class="control-button">
+            <div class="btn btn-start" id="start"></div>
+            <div class="label">START</div>
+          </div>
+          <div class="control-button">
+            <div class="btn btn-strict" id="strict"></div>
+            <div class="label">STRICT</div>
+          </div>
+          <div class="light"></div>
+        </div>
+        <div class="switch-wrapper">
+          <div class="hlabel" id="label-on">ON</div>
+          <div class="switch-container">
+            <input id="switch" type="checkbox"/>
+            <label for="switch"></label>
+          </div>
+          <div class="hlabel">OFF</div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="simon.js"></script>
+  </body>
+</html>
